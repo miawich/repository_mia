@@ -47,20 +47,27 @@ print(top_ten)
 
 # PROBLEM 4 (4pts)
 # Find the number which appears most often in num_list?
-'''
-for number in num_list:
-    track_num = number.count()
-    print(track_num)
-'''
+from collections import *
+data = Counter(num_list)
+data.most_common()   # Returns all items and their counts
+print(data.most_common(1))  # Returns the highest occurring item
+
 # CHALLENGE PROBLEMS (2pts)
 # TOUGH PROBLEMS, BUT FEW POINTS
 
 # Find the number of prime numbers in num_list?
 # Hint: One way is to just start removing the ones that aren't
-
+'''
 for number in num_list:
     if number/number and number/1:
         print(number)
+'''
+from math import sqrt
+from Problems.number_list import *
+for x in range(2, num_list):
+    if not any(y for y in range(2, 1 + int(sqrt(x))) if not x % y):
+        print(x)
+
 # Find the number of palindromes
 # Hint: This may be easier to do with strings
 
