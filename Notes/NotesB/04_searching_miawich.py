@@ -110,3 +110,5 @@ def split_line(line):
 
 my_text = "Howdy y'all, i'm codin'!"
 print(split_line(my_text))
+
+file = open("")
