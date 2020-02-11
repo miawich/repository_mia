@@ -1,4 +1,5 @@
 # Hangman: 02/03/20
+
 import random as r
 done = False
 my_words = ["hike", "cafe", "plants", "music", "thermos", "kahlo"]
@@ -10,6 +11,7 @@ right = []
 abcs = [chr(x) for x in range(65, 65 + 26)]
 correct = False
 winning = len(my_word) + 2
+#  im not quite sure what the problem is here but it ended up working
 gallows = [
     '''
       +---+

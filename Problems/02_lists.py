@@ -16,7 +16,7 @@ print(my_list)
 print()
 
 # c) Make a list of squares from 1 to 100 (1 ** 2 to 100 ** 2)
-my_list = [x ** 2 for x in range(101)]
+my_list = [x ** 2 for x in range(1, 101)]
 print(my_list)
 
 print()
@@ -50,6 +50,7 @@ print()
 num_list.sort()
 num_list.pop(0)
 print(num_list)
+
 # Create and print a new list called top_ten which contains only the 10 highest numbers in num_list(2pts)
 print()
 
