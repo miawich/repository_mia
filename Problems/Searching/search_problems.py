@@ -120,7 +120,8 @@ for line in file:
         words_in_alice.append(word)
 for word in words_in_alice:
     if word == "CHESHIRE":
-        next_word = words_in_alice.index(word)
+        word_index = words_in_alice.index(word)
+        next_word = words_in_alice.index(word_index + 1)
         if next_word == "CAT":
             cheshire_cat += 1
 
