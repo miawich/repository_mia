@@ -112,4 +112,4 @@ for line in atlg_file:
 alice_file.close()
 atlg_file.close()
 
-#  i thought this was the right idea but it just prints every word so oops
+#  i thought this was the right idea but it just prints every word so oops!
