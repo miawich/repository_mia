@@ -7,7 +7,7 @@ For all answers, show your work
 Use combinations of sorting, list comprehensions, filtering or other techniques to get the answers.
 '''
 
-from NBAStats import data
+from NBAStats import *
 #
 # #1  Pop off the first item in the list and print it.  It contains the column headers. (1pt)
 header = data.pop(0)

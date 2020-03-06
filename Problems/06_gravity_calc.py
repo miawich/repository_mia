@@ -15,6 +15,21 @@
 # (3pts) calculates the force of gravity in Newtons and print the result to the user in scientific notation to two decimals.
 
 
+done = False
 
+while not done:
+    try:
+        m1 = float(input("enter mass one:"))
+        m2 = float(input("enter mass two:"))
+        r = float(input("enter the distance between objects:"))
+        force = 6.67e-11 * (m1 * m2) / r ** 2
+        print("The force of gravity in Newtons is {:.2e}".format(force))
+        done = True
+    except ZeroDivisionError:
+        print("input is not valid")
+        done = False
+    except ValueError:
+        print("input is not valid")
+        done = False
 
 
