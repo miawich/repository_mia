@@ -17,19 +17,25 @@
 
 done = False
 
+
+def force_o_gravity(m1, m2, r):
+    force = 6.67e-11 * (m1 * m2) / r ** 2
+    return force
+
+
 while not done:
     try:
         m1 = float(input("enter mass one:"))
         m2 = float(input("enter mass two:"))
         r = float(input("enter the distance between objects:"))
-        force = 6.67e-11 * (m1 * m2) / r ** 2
+        force = force_o_gravity(m1, m2, r)
         print("The force of gravity in Newtons is {:.2e}".format(force))
         done = True
-    except ZeroDivisionError:
-        print("input is not valid")
+    except ZeroDivisionError as e:
+        print("input is not valid:", e)
         done = False
-    except ValueError:
-        print("input is not valid")
+    except ValueError as e:
+        print("input is not valid:", e)
         done = False
 
 
