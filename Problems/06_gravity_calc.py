@@ -12,7 +12,7 @@
 # (3pts) takes the inputs for mass 1, mass 2, and distance between the two objects (m1, m2, and r)
 # (4pts) contains exceptions for any potential errors (value and dividebyzero).
 # (2pts) keeps asking for inputs until they are valid (see while loop from notes)
-# (3pts) calculates the force of gravity in Newtons and print the result to the user in scientific notation to two decimals.
+# (3pts) calculates the force of gravity in Newtons and prints results in scientific notation to 2 decimals.
 
 
 done = False
