@@ -17,4 +17,3 @@ It has been updated with 2018 data, but not yet with 2019 unfortunately
 
 import csv
 
-with open("") 
