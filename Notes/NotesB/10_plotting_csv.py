@@ -22,6 +22,8 @@ my_library = monthly_data[library_names.index('Lincoln Park')]
 my_library = [int(x) for x in my_library]
 print(my_library)
 
+library_2 = monthly_data[library_names.index('Bucktown-Wicker Park')]
+library_2= [int(x) for x in library_2]
 
 plt.figure(1, tight_layout=True)
 month_numbers = [x for x in range(12)]
@@ -29,15 +31,16 @@ month_names = headers[4:-1]
 print(month_names)
 
 # plt.plot(month_numbers, my_library)  # plots line graph
-plt.bar(month_numbers, my_library, color='darkgreen', edgecolor='black')  # plots a bar graph
+plt.bar(month_numbers, my_library, color='darkgreen', edgecolor='black', label='Lincoln Park')  # plots a bar graph
 plt.xticks(month_numbers, month_names, rotation=45)  # replaces the shown values on the graph axis
 plt.axis([-1, 12, 0, 16000])
-plt.title("Lincoln Park Library Visitors 2019", fontsize=20)
+plt.title("Library Visitors 2019", fontsize=20)
 plt.ylabel('Visitors')
 
+plt.bar(month_numbers, library_2, color='blue', edgecolor='black', label='Bucktown-Wicker Park')
 
 plt.figure(2, tight_layout=True, figsize=(10, 7))
-
+plt.legend()
 # plot every library in Chicago YTD visitors on a bar graph
 
 # get library totals
