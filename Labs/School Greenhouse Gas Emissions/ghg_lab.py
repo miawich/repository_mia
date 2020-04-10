@@ -24,7 +24,6 @@ Make a scatterplot which does the following:
 - Annotate Francis W. Parker. (5pts)
 - Create a best fit line for schools shown. (5pts)
 
-
 Extra Credit: Add a significant feature to your graph that helps tell the story of your data.  (feel free to use methods from matplotlib.org). (10pts)
 
 Note: With extra credit you will earn you a max of 35pts (100%) for the assignment.
@@ -38,4 +37,56 @@ Maybe you can try one of the following or think up your own:
 Note 2:  This is a tough assignment to do on your own.  Do your best with what you have.  We will do
 '''
 
+import csv
+import matplotlib.pyplot as plt
+import numpy as np
+import requests
 
+url = "https://data.cityofchicago.org/api/views/xq83-jr8c/rows.csv?accessType=DOWNLOAD"
+
+with requests.Session() as s:
+    download = s.get(url)
+    content = download.content.decode('utf-8')
+    reader = csv.reader(content.splitlines(), delimiter=',')
+    data = list(reader)
+
+headers = data.pop(0)
+print(headers)
+
+data.sort(key=lambda x: int(x[0]))
+ghg_index = headers.index("Total GHG Emissions (Metric Tons CO2e)")
+sqft_index = headers.index("Gross Floor Area - Buildings (sq ft)")
+prop_type = headers.index("Primary Property Type")
+school_index = headers.index("Property Name")
+valid_data = []
+print(len(data))
+for building in data:
+    try:
+        int(building[ghg_index])
+        int(building[sqft_index])
+        if building[0] == "2018":
+            if building[prop_type] == "K-12 School":
+                valid_data.append(building)
+    except:
+        pass
+print(len(valid_data))
+
+print(valid_data)
+
+schools = [str(x[school_index]) for x in valid_data]
+ghg = [int(x[ghg_index]) for x in valid_data]
+sqft = [int(x[sqft_index]) for x in valid_data]
+
+plt.figure(1)
+plt.scatter(sqft, ghg, alpha=0.3, color='green')
+plt.xlabel("Gross Floor Area - Buildings (sq ft)")
+plt.ylabel("Total GHG Emissions (Metric Tons CO2e)")
+plt.title("Greenhouse Gas Emissions of Chicago School Compared to the Square Footage", size=11)
+
+p = np.polyfit(sqft, ghg, 1)
+x = [x for x in range(50000, 450000)]
+y = [p[0] * y + p[1] for y in x]
+plt.plot(x, y, color='pink')
+# plt.annotate("Latin School of Chicago Upper School", xy=(1780, 151751))
+
+plt.show()
