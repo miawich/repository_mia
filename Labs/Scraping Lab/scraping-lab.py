@@ -8,7 +8,36 @@
 # Have fun.  Again, nothing explicit.
 
 #  print("{} {}!".format("Hello", "World"))
+import time
+import urllib.request
+import certifi
+from bs4 import BeautifulSoup
+import requests
+from selenium import webdriver
+twitter_url = "https://twitter.com/StephenAtHome"
 
+driver = webdriver.Chrome("/Users/miawichman/PycharmProjects/P2_SP20/Labs/Scraping Lab/chromedriver")
+driver.implicitly_wait(10)
+driver.get(twitter_url)   # hey mr lee, i have a virus on my chrome so i am not sure if it actually works
+
+
+last_height = driver.execute_script("return document.body.scrollHeight")
+x = 0
+pages_to_scroll = 30
+
+while x < pages_to_scroll:
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    x += 1
+
+    time.sleep(1)  # seconds to let it load the new posts
+
+    new_height = driver.execute_script("return document.body.scrollHeight")
+    if new_height == last_height:
+        break  # reached the bottom or maybe didn't load
+    last_height = new_height
+
+soup = BeautifulSoup(driver.page_source, 'lxml')
+print(soup.prettify())
 
 # Weather Scraping (15pts)
 # Below is a link to a 10-day weather forecast at weather.com
