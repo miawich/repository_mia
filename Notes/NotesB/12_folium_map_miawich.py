@@ -20,7 +20,7 @@ folium.Marker(location=(41.923064, -87.638504),
               icon=folium.Icon(color='red', icon='graduation-cap', prefix='fa')
               ).add_to(art_map)
 
-for i  in range(len(data)):
+for i in range(len(data)):
     folium.Marker(location=(lats[i], longs[i]),
                   popup=names[i],
                   icon=folium.Icon(color='blue', icon='paint-brush', prefix='fa')
