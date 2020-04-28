@@ -1,6 +1,5 @@
 # Folium train map
 
-
 # 15pts - Use folium to plot all of the L train stops in Chicago. Use an appropriate start zoom level.
 # 5pts - Add the name to each stop as a popup. Add a train icon to each marker.  Save as an html page in the same folder.
 # 3pts  - Color code all of the lines (make the pink line marker pink etc.)
