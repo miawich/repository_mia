@@ -59,7 +59,7 @@ for i in range(len(purp2)):
 yellow = [str(x[14]) for x in data]
 for i in range(len(yellow)):
     if yellow[i] == 'true':
-        line_color.append('yellow')
+        line_color.append('#FFFF00')
 pink = [str(x[15]) for x in data]
 for i in range(len(pink)):
     if pink[i] == 'true':

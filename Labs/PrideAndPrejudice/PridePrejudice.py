@@ -10,7 +10,6 @@ We will use list, dictionary, and graphing skills to do a basic analysis of Jane
 A common Python pattern to count objects, produce histograms, or update stats is to make calls to a dictionary as you iterate through a list. For example, given a list of words, you can create a dictionary to store counts and then iterate through the list of words, checking how many times each word has appeared using your dictionary, and updating the dictionary count now that you've seen that word again.
 '''
 
-
 # PSEUDO CODE
 # Get text from http://www.gutenberg.org/files/1342/1342-0.txt - Use requests library.
 # Split the transcript into words - Use split and strip methods and store results in a list.
@@ -32,7 +31,16 @@ print(pride_prejudice[:1000])
 wordlist = pride_prejudice.split()
 wordlist = [x.upper().strip(' ?.:;!\\<>{}\n\t') for x in wordlist]
 
-print(wordlist[:1000])
+wordcount = {}
+print(wordlist)
+
+for word in wordlist:
+    wordcount[word] += 1
+print(wordcount)
+
+'''wordcount.sort()
+
+plt.bar(wordcount.keys, wordcount.values)'''
 
 # CHALLENGE (OPTIONAL)
 # Here is a list of the 1000 most common words in English: https://gist.githubusercontent.com/deekayen/4148741/raw/98d35708fa344717d8eee15d11987de6c8e26d7d/1-1000.txt
