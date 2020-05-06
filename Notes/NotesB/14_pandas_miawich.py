@@ -28,7 +28,7 @@ df2 = pd.DataFrame(data=d, columns=cols)
 print(df2)
 
 # make a df from a csv
-df3 = pd.read_csv('Parks_-_Public_Art.csv')
+df3 = pd.read_csv('Beach_Weather_Stations_-_Automated_Sensors.csv')
 print(type(df3))
 
 print(df3.head())  # first five rows in df

@@ -29,7 +29,7 @@ pride_prejudice = requests.get(url).text
 print(pride_prejudice[:1000])
 
 wordlist = pride_prejudice.split()
-wordlist = [x.upper().strip(' ?.:;!\\<>{}\n\t') for x in wordlist]
+wordlist = [x.upper().strip(' ?.:;!Ï»¿\\<>{}\n\t') for x in wordlist]
 
 wordcount = {}
 print(wordlist)
