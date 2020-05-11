@@ -5,4 +5,4 @@ df = pd.read_csv('/Users/miawichman/PycharmProjects/P2_SP20/Notes/NotesB/world_c
 
 # iloc
 
-#  changing the data
+
